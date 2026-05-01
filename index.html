@@ -133,9 +133,11 @@
   <!-- AI DEMO -->
   <div class="demo-section">
     <div class="demo-label">🤖 Pregúntale a la IA del ICONE Method</div>
-    <div class="api-row">
+    <div style="display:flex;justify-content:flex-end;margin-bottom:10px">
+      <span class="api-badge" id="apiBadge" title="Doble clic para configurar" ondblclick="document.getElementById('apiRow').style.display=document.getElementById('apiRow').style.display==='none'?'flex':'none'">⚡ Modo demo</span>
+    </div>
+    <div class="api-row" id="apiRow" style="display:none">
       <input class="api-input" id="apiKey" type="password" placeholder="Pegar API Key de Claude aquí — activa IA real" oninput="checkKey()">
-      <span class="api-badge" id="apiBadge">⚡ Modo demo</span>
     </div>
     <div class="prompt-bar">
       <input class="prompt-input" id="promptIn" placeholder="Ej: ¿Cómo atraigo más clientes con IA? · ¿Qué programa me conviene? · ¿Cómo estructuro mis ventas?" onkeydown="if(event.key==='Enter')runDemo()">
@@ -406,12 +408,4 @@ async function runDemo(){
   box.innerHTML='';
   resp.split('\n').forEach(line=>{
     if(!line.trim()){box.appendChild(document.createElement('br'));return;}
-    const p=document.createElement('p');
-    p.style.cssText='margin-bottom:8px;animation:fadeIn .3s ease';
-    p.innerHTML=line.replace(/\*\*(.*?)\*\*/g,'<strong style="color:#00d4ff">$1</strong>');
-    box.appendChild(p);
-  });
-  document.getElementById('ctaRow').classList.add('visible');
-}
-
-// K
+    const p=d
