@@ -147,7 +147,7 @@
       <span class="output-placeholder">Tu respuesta personalizada aparecerá aquí — el ICONE Method en acción...</span>
     </div>
     <div class="cta-row" id="ctaRow">
-      <a class="cta-btn cta-primary" href="https://iconeialabs.com" target="_blank">
+      <a class="cta-btn cta-primary" href="https://iconeialabs.com" target="_blank" rel="noopener noreferrer" onclick="window.open('https://iconeialabs.com','_blank');return false;">
         🚀 Conoce el ICONE Method
       </a>
       <a class="cta-btn cta-secondary" href="https://www.linkedin.com/in/jorgehugoperezgaona" target="_blank">
@@ -165,7 +165,7 @@
   </div>
 
   <div class="footer">
-    <a href="https://iconeialabs.com" target="_blank">iconeialabs.com</a> &nbsp;·&nbsp; Jorge Hugo Pérez Gaona &nbsp;·&nbsp; Speaker Internacional · Docente Universitario
+    Jorge Hugo Pérez Gaona &nbsp;·&nbsp; Speaker Internacional · Docente Universitario
   </div>
 
 </div>
@@ -408,4 +408,3 @@ async function runDemo(){
   box.innerHTML='';
   resp.split('\n').forEach(line=>{
     if(!line.trim()){box.appendChild(document.createElement('br'));return;}
-    const p=d
