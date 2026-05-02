@@ -408,3 +408,19 @@ async function runDemo(){
   box.innerHTML='';
   resp.split('\n').forEach(line=>{
     if(!line.trim()){box.appendChild(document.createElement('br'));return;}
+    const p=document.createElement('p');
+    p.style.cssText='margin-bottom:8px;animation:fadeIn .3s ease';
+    p.innerHTML=line.replace(/\*\*(.*?)\*\*/g,'<strong style="color:#00d4ff">$1</strong>');
+    box.appendChild(p);
+  });
+  document.getElementById('ctaRow').classList.add('visible');
+}
+
+// Keyboard shortcut
+document.getElementById('promptIn').addEventListener('keydown',e=>{if(e.key==='Enter')runDemo();});
+</script>
+<style>
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+</style>
+</body>
+</html>
